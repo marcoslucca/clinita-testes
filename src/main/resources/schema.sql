@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS tutor (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  idade INTEGER,
+  nome varchar(255),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS cachorro (
+id INTEGER NOT NULL AUTO_INCREMENT,
+idade INTEGER,
+nome varchar(255),
+tutor_id INTEGER,
+PRIMARY KEY (id),
+CONSTRAINT tutor_fk FOREIGN KEY (tutor_id) REFERENCES tutor (id)
+);
